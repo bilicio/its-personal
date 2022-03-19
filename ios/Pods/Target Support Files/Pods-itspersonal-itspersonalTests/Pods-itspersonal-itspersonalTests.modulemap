@@ -1,0 +1,6 @@
+module Pods_itspersonal_itspersonalTests {
+  umbrella header "Pods-itspersonal-itspersonalTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
