@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,15 +9,16 @@ import {
   View,
 } from 'react-native';
 
+import { initialState, asyncActionHandlers, appReducer } from './src/hooks';
+
+import { useReducerAsync } from "use-reducer-async";
+
 import { withAuthenticator } from 'aws-amplify-react-native'
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
 
 const Section: React.FC<{
   title: string;
@@ -49,6 +50,15 @@ const Section: React.FC<{
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  const reducer = useReducerAsync(appReducer, { initialState }, asyncActionHandlers);
+  const [{ loading }, dispatch] = reducer;
+
+
+  useEffect(() => {
+    //dispatch({ type: 'SET_TODO', payload:{name:'todo nome', description: 'descricao teste'} });
+    dispatch({ type: 'GET_USER' });
+    return () => {};
+  }, [])
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -60,25 +70,14 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Its Personal">
+            
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          
         </View>
       </ScrollView>
     </SafeAreaView>

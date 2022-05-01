@@ -8821,6 +8821,11 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-reducer-async@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/use-reducer-async/-/use-reducer-async-2.1.0.tgz#6ae3e6d243b68ab0bad0441ea4caa989cbac263b"
+  integrity sha512-FI83120WteeUGoYaPXWJ/w5HVbF/fYJHLJRxnjpJ6xH9QiufmeumfuNWxssEvlICZWSN5m3GwQDiBXRA72tiwg==
+
 use-subscription@^1.0.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"

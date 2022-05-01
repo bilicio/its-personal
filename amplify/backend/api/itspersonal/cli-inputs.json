@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "itspersonal",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/Shared/projetos/its-personal/amplify/backend/api/itspersonal/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
